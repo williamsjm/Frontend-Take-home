@@ -61,6 +61,7 @@ const Home = () => {
           <Select placeholder="Select">
             <Option value="instagram">Instagram</Option>
             <Option value="facebook">Facebook</Option>
+            <Option value="twitter">Twitter</Option>
           </Select>
         </Form.Item>
         <Form.Item

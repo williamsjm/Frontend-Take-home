@@ -5,6 +5,7 @@ import {
   FaTrashAlt,
   FaInstagram,
   FaFacebookF,
+  FaTwitter,
   FaQuestionCircle,
 } from "react-icons/fa";
 
@@ -13,6 +14,18 @@ const Customtable = (props) => {
 
   const handleDelete = (item) => {
     setActivity(activity.filter((a) => a.id !== item.id));
+  };
+
+  const socialPlatform = (social) => {
+    if (social === "instagram") {
+      return <FaInstagram className="mr-1" style={{ width: 15, height: 15 }} />;
+    }
+    if (social === "facebook") {
+      return <FaFacebookF className="mr-1" style={{ width: 15, height: 15 }} />;
+    }
+    if (social === "twitter") {
+      return <FaTwitter className="mr-1" style={{ width: 15, height: 15 }} />;
+    }
   };
 
   return (
@@ -38,7 +51,8 @@ const Customtable = (props) => {
               </td>
               <td className="py-3 px-2 border-t border-b ">
                 <div className="flex justify-center items-center">
-                  {item.socialPlatform === "instagram" ? (
+                  {socialPlatform(item.socialPlatform)}
+                  {/* {item.socialPlatform === "instagram" ? (
                     <FaInstagram
                       className="mr-1"
                       style={{ width: 15, height: 15 }}
@@ -48,7 +62,7 @@ const Customtable = (props) => {
                       className="mr-1"
                       style={{ width: 15, height: 15 }}
                     />
-                  )}
+                  )} */}
 
                   <p className="mb-0 text-[14px]">{item.socialType}</p>
                 </div>
